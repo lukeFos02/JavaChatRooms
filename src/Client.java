@@ -47,7 +47,7 @@ public class Client {
 
             while(socket.isConnected()){
                 String message = scanner.nextLine();
-                if(message.equalsIgnoreCase("menu")){
+                if(message.equalsIgnoreCase("menu") || message.equalsIgnoreCase("quit")){
                     showMenu(client, scanner);
                     client.listenForMessage();
                     client.sendMessage(client, scanner);
@@ -122,21 +122,30 @@ public class Client {
         System.out.println("# Press 1 for public chat  #");
         System.out.println("# Press 2 to look at rooms #");
         System.out.println("# Press 3 to join a room   #");
+        System.out.println("# Press 4 to quit          #");
         System.out.println("#                          #");
         System.out.println("############################");
         System.out.println();
-        String command = scanner.nextLine();
-        if (command.equals("1")){
-            clearConsole();
-            System.out.println("Current Chat Room: " + client.currentRoom.name);
-            System.out.println();
-            pastLogin = true;
-        }
-        else if (command.equals("2")){
-            showRooms(client, scanner);
-        }
-        else if (command.equals("3")){
-            listRooms(client, scanner);
+        while (true){
+            String command = scanner.nextLine();
+            if (command.equals("1")){
+                clearConsole();
+                System.out.println("Current Chat Room: " + client.currentRoom.name);
+                System.out.println();
+                pastLogin = true;
+                break;
+            }
+            else if (command.equals("2")){
+                showRooms(client, scanner);
+                break;
+            }
+            else if (command.equals("3")){
+                listRooms(client, scanner);
+                break;
+            }
+            else if (command.equals("4")){
+                System.exit(0);
+            }
         }
     }
 

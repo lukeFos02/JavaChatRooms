@@ -2,3 +2,6 @@
 {"message":{"body":"Public => luke: m2","when":2023-01-03,"from":"luke"}}
 {"message":{"body":"Public => luke: hello john","when":2023-01-03,"from":"luke"}}
 {"message":{"body":"Public => john: hello luke","when":2023-01-03,"from":"john"}}
+{"message":{"body":"Public => luke: hello","when":2023-01-04,"from":"luke"}}
+{"message":{"body":null,"when":2023-01-04,"from":"luke"}}
+{"message":{"body":"Public => luke: hello","when":2023-01-04,"from":"luke"}}
